@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQ2</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<form action="#">
+    <script>
+        $(document).ready(function(){
+            $("input").change(function(){
+                console.log($('input').val())
+            });
+        });
+    </script>
+    <label>
+        <input type="text" placeholder="field 'one'" id="field-one">
+    </label>
+    <label>
+        <input type="text" placeholder="field 'two'" id="field-two">
+    </label>
+    <label>
+        <input type="text" placeholder="field 'three'" id="field-three">
+    </label>
+    <label>
+        <input type="radio">
+    </label>
+    <label>
+        <input type="radio">
+    </label>
+    <label>
+        <input type="checkbox">
+    </label>
+    <label>
+        <input type="checkbox">
+    </label>
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQ</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>
+        <button type="button" id="add-class">addClass</button>
+        <script>
+            $("#add-class").on("click", function () {
+                $("#add-class").addClass("someClass");
+            });
+        </script>
+    </li>
+    <li>
+        <button type="button" id="remove-class">removeClass</button>
+        <script>
+            $("#remove-class").on("click", function () {
+                $("#add-class").removeClass("someClass");
+            });
+        </script>
+    </li>
+    <li>
+        <button type="button" id="toggle-class">toggleClass</button>
+        <script>
+            $("#toggle-class").on("click", function () {
+                $("#toggle-class").toggleClass("someClass");
+            });
+        </script>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <button type="button" id="get-attr">getAttr</button>
+        <script>
+            $("#get-attr ").on("click", function buttonValue() {
+                alert($("#get-attr").attr("type"));
+            });
+        </script>
+    </li>
+    <li>
+        <button type="button" id="set-attr">setAttr</button>
+        <script>
+            $("#set-attr ").on("click", function () {
+                $("#set-attr").attr("width", "1111");
+                alert($("#set-attr ").attr("width"));
+            });
+        </script>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <button type="button" id="alert-onclick">alertOnClick</button>
+        <script>
+            $("#alert-onclick").on('click', function () {
+                alert("CLICK")
+            })
+        </script>
+    </li>
+    <li>
+        <button type="button" id="trigger-alert">triggerAlert</button>
+        <script>
+            $("#trigger-alert").on('click', function () {
+                $("#alert-onclick").trigger('click')
+            })
+        </script>
+    </li>
+</ul>
+
+<ul>
+    <li class="clone-li">
+        <button type="button" id="clone-button">cloneThis</button>
+        <script>
+            $('#clone-button').on('click', function () {
+                $('#clone-button').clone('button').appendTo('.clone-li').text('cloned');
+
+            })
+        </script>
+    </li>
+    <li>
+        <button type="button" id="closest-element">closestElement</button>
+        <script>
+            $('#closest-element').on('click', function () {
+                console.log($('#closest-element').closest('li'))
+
+            })
+        </script>
+    </li>
+</ul>
+<ul>
+    <li>
+        <button type="button" id="each-btn-text">eachBtnText</button>
+        <script>
+            $('#each-btn-text').on('click', function () {
+                var mas = document.querySelectorAll('button');
+                for (var i = 0; i < mas.length; i++) {
+                    var cont = $.text(mas);
+                }
+                console.log([cont])
+            })
+        </script>
+    </li>
+    <li>
+        <button type="button" id="find-me">findMe</button>
+        <script>
+            $('#find-me').on('click', function () {
+                var mas = document.querySelectorAll('button');
+                for (var i = 0; i < mas.length; i++) {
+                    var cont = $.text(mas);
+                    if (cont === $.text('findMe')) {
+                        console.log(cont);
+                        break
+                    }
+                }
+            })
+        </script>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <button type="button" id="fade-in-text">fadeInText</button>
+        <p hidden id="fade-in-text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deleniti
+            eaque et
+            facilis numquam reiciendis tempore tenetur? Dolorem doloribus, ea ex illo iure pariatur qui reiciendis saepe
+            sed voluptates voluptatibus.</p>
+        <script>
+            $('#fade-in-text').on('click', function () {
+                $('#fade-in-text-p').fadeIn('slow')
+            })
+        </script>
+    </li>
+    <li>
+        <button type="button" id="fade-out-text">fadeOutText</button>
+        <p id="fade-out-text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deleniti eaque et
+            facilis numquam reiciendis tempore tenetur? Dolorem doloribus, ea ex illo iure pariatur qui reiciendis saepe
+            sed voluptates voluptatibus.</p>
+        <script>
+            $('#fade-out-text').on('click', function () {
+                $('#fade-out-text-p').fadeOut('slow')
+            })
+        </script>
+    </li>
+    <li>
+        <button type="button" id="show-text">showText</button>
+        <p hidden id="show-text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deleniti eaque
+            et
+            facilis numquam reiciendis tempore tenetur? Dolorem doloribus, ea ex illo iure pariatur qui reiciendis saepe
+            sed voluptates voluptatibus.</p>
+        <script>
+            $('#show-text').on('click', function () {
+                $('#show-text-p').show('slow')
+            })
+        </script>
+    </li>
+    <li>
+        <button type="button" id="hide-text">hideText</button>
+        <p id="hide-text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deleniti eaque et
+            facilis numquam reiciendis tempore tenetur? Dolorem doloribus, ea ex illo iure pariatur qui reiciendis saepe
+            sed voluptates voluptatibus.</p>
+        <script>
+            $('#hide-text').on('click', function () {
+                $('#hide-text-p').hide('slow')
+            })
+        </script>
+    </li>
+</ul>
+
+<div>
+    <button type="button" id="data-about-me">dataAboutMe</button>
+    <script>
+        $('#data-about-me').on('click', function () {
+            var elementId = $("#data-about-me");
+            elementId.height().width().offset().attr()
+
+        })
+    </script>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#data-test').click( function () {
+            $('#div').data('greeting', 'Hello World');
+        });
+        $('#data-test2').click(function () {
+            alert($('#div').data('greeting'));
+        });
+    })
+</script>
+<button id="data-test">dataTest</button>
+<button id="data-test2">dataTest2</button>
+<div id="div"></div>
+
+<div>
+    <button id="detachBtn">detach</button>
+    <script>
+        $("#detachBtn").click(function(){
+            $("button").detach();
+        });
+    </script>
+</div>
+<div>
+    <button id="eq">eq</button>
+    <script>
+        $("#eq").click(function(){
+            $("button:eq(1)");
+        });
+    </script>
+</div>
+<div>
+    <button id="has-class">hasClass</button>
+    <script>
+        $("#has-class").click(function(){
+            $("button").hasClass('main');
+        });
+    </script>
+</div>
+<div>
+    <button id="html">html</button>
+    <script>
+        $("#html").click(function(){
+            $("button").html('<button>HELLO</button>');
+        });
+    </script>
+</div>
+<div>
+    <button id="index">index</button>
+    <script>
+        $("#index").click(function(){
+            alert($(this).index());
+        });
+    </script>
+</div>
+<div>
+    <button id="off">off</button>
+    <script>
+        $("#off").click(function(){
+            $("#off").off('click');
+            alert('this button is off now')
+        });
+    </script>
+</div>
+<div>
+    <div id="on">on</div>
+    <script>
+        $("#on").on("click", function(){
+            $("").on('click');
+            alert('ON IS CLICK')
+        });
+    </script>
+</div>
+
+<div>
+    <button type="button" id="prop">add prop</button>
+    <script>
+        $("#prop").click(function(){
+            var $x = $("#propTest");
+            $x.prop("color", "FF0000");
+            $x.append("The color property: " + $x.prop("color"));
+        });
+    </script>
+
+    <button type="button" id="remove-prop">remove prop</button>
+    <script>
+        $("#remove-prop").click(function(){
+            var $x = $("#propTest");
+            $x.removeProp("color");
+            $x.append("The color property: " + $x.prop("color"));
+        });
+    </script>
+
+    <div id="propTest"></div>
+</div>
+
+<div>
+    <button type="button" id="removeAttr" style="background-color: yellow">removeAttr</button>
+    <script>
+        $("#removeAttr").click(function(){
+                $("#removeAttr").removeAttr("style")
+        });
+    </script>
+</div>
+
+
+<div>
+    <p>Window resized <span>0</span> times.</p>
+    <p>Try resizing your browser window.</p>
+    <script>
+        $(document).ready(function(){
+            x = 0;
+            $(window).resize(function(){
+                $("span").text(x += 1);
+            });
+        });
+    </script>
+</div>
+
+<div>
+    <script>
+        $(document).ready(function(){
+            z = 0;
+            $("div").scroll(function(){
+                $("span").text( z+= 1);
+            });
+        });
+    </script>
+    <p>Try the scrollbar in the div</p>
+
+    <div style="border:1px solid black;width:200px;height:100px;overflow:scroll;">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+        <br><br>
+        'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.'
+    </div>
+
+    <p>Scrolled <span>0</span> times.</p>
+</div>
+
+
+<div>
+    <button type="button" id="slideDown">slideDown</button>
+    <button type="button" id="slide" style="display: none">slide</button>
+    <script>
+        $("#slideDown").click(function(){
+            $("#slide").slideDown("slow");
+        });
+    </script>
+</div>
+
+
+<div>
+    <button type="button" id="slideToggle">slideToggle</button>
+    <button type="button" id="slideT" style="display: none">slideT</button>
+    <script>
+        $("#slideToggle").click(function(){
+            $("#slideT").slideToggle("slow");
+        });
+    </script>
+</div>
+</body>
+</html>
